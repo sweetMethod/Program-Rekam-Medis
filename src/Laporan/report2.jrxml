@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[Select * From Pegawai]]>
+	</queryString>
+	<field name="kd_pegawai" class="java.lang.String"/>
+	<field name="nama_pegawai" class="java.lang.String"/>
+	<field name="alamat_pegawai" class="java.lang.String"/>
+	<field name="tel_pegawai" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="2" width="555" height="77" forecolor="#66CC00"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Roboto Black" size="34"/>
+				</textElement>
+				<text><![CDATA[Daftar Pegawai Klinik Tanser]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="21" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="31" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="31" forecolor="#FFFFFF" backcolor="#33FF00"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="101" height="31"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Roboto Medium" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kode Pegawai]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="139" y="0" width="101" height="31"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Roboto Medium" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama Pegawai]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="0" width="101" height="31"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Roboto Medium" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Alamat Pegawai]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="441" y="0" width="114" height="31"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Roboto Medium" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Telp Pegawai]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="1" y="0" width="138" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{kd_pegawai}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="139" y="0" width="161" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{nama_pegawai}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="0" width="141" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{alamat_pegawai}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="441" y="0" width="113" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{tel_pegawai}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="20" splitType="Stretch">
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="1" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="29" splitType="Stretch">
+			<textField>
+				<reportElement x="436" y="5" width="80" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="516" y="5" width="40" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
